@@ -71,7 +71,11 @@ class Counter extends React.Component {
     render(){
         return (
         <div>
-            <div>
+            <div ref={function(e){
+                if(e!=null){
+                    e.focus();
+                }
+            }}>
                 {this.state.count}
             </div>
             <div>
