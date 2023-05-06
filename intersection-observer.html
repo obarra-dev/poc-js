@@ -48,6 +48,7 @@
         src="https://d3ugyf2ht6aenh.cloudfront.net/stores/814/563/products/41141837_905893922943720_9207504391848853504_n1-77f15e8dc9eba511c915418765925080-640-01-05d3455923c750e6bb16541245479576-480-0.webp"
         alt="cam"
       />
+      <button onclick="onClick()">Disconect</button>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo delectus
         minus commodi? Iusto eligendi quidem nulla. Asperiores officiis ullam
@@ -82,6 +83,10 @@
           document.getElementById("messageID").innerHTML =
             "Image is not visible";
         }
+      }
+
+      function onClick() {
+        observer.disconnect();
       }
 
       const imageElement = document.querySelector("img");
