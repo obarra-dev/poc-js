@@ -11,12 +11,26 @@
         height: 200px;
         width: 500px;
         background-color: gray;
-        overflow-y:scroll;
+        overflow-y: scroll;
       }
     </style>
   </head>
   <body>
+    <p id="messageID"></p>
+
     <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo delectus
+        minus commodi? Iusto eligendi quidem nulla. Asperiores officiis ullam
+        minima blanditiis deleniti aut deserunt obcaecati! Id libero at dolorem
+        nemo? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
+        minima aspernatur a impedit quae sequi mollitia sint earum? Ex molestiae
+        asperiores expedita pariatur dolores inventore ullam recusandae
+        laboriosam quos eligendi! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Corrupti nesciunt ea laudantium voluptate totam illo
+        excepturi iure? Odit, ratione dolor cum doloremque accusamus nulla,
+        explicabo rerum, a alias ut fugit?
+      </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo delectus
         minus commodi? Iusto eligendi quidem nulla. Asperiores officiis ullam
@@ -46,6 +60,34 @@
         excepturi iure? Odit, ratione dolor cum doloremque accusamus nulla,
         explicabo rerum, a alias ut fugit?
       </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo delectus
+        minus commodi? Iusto eligendi quidem nulla. Asperiores officiis ullam
+        minima blanditiis deleniti aut deserunt obcaecati! Id libero at dolorem
+        nemo? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
+        minima aspernatur a impedit quae sequi mollitia sint earum? Ex molestiae
+        asperiores expedita pariatur dolores inventore ullam recusandae
+        laboriosam quos eligendi! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Corrupti nesciunt ea laudantium voluptate totam illo
+        excepturi iure? Odit, ratione dolor cum doloremque accusamus nulla,
+        explicabo rerum, a alias ut fugit?
+      </p>
     </div>
+    <script>
+      function checkVisibility(entries) {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          document.getElementById("messageID").innerHTML = "Image is visible";
+        } else {
+          document.getElementById("messageID").innerHTML =
+            "Image is not visible";
+        }
+      }
+
+      const imageElement = document.querySelector("img");
+
+      const observer = new IntersectionObserver(checkVisibility, {});
+      observer.observe(imageElement);
+    </script>
   </body>
 </html>
