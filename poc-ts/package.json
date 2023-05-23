@@ -7,7 +7,7 @@
     "prettier-write": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss,md}'",
     "prettier-check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,scss,md}'",
     "test2": "echo \"Error: no test specified\" && exit 1",
-    "test": "jest src"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
