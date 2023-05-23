@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier-write": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss,md}'",
+    "prettier-check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,scss,md}'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/temp": "^0.9.1",
+    "prettier": "2.8.8",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },
