@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<body>
+    <div id="app">
+    </div>
+    <script >
+        const url = new URL("https://www.dolarito.ar");
+        url.searchParams.set("mep", 400);
+        url.searchParams.set("ccl", 399);
+
+        document.getElementById('app').innerHTML = url;
+    </script>
+
+</head>
+</body>
+</html>
