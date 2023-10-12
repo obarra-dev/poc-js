@@ -180,3 +180,93 @@ const rgb: RGB = [1,2,3]
 type State = [string, (nameState: string) => void]
 const [message, setMessage] : State = ["hello world", (message: string) => {console.log(`setting: ${message}`)}]
 setMessage(message)
+
+// enums
+const enum ERROR_TYPE_INDEX {
+  NOT_FOUND,
+  UNAUTHORIZED,
+  FORBIDEN
+}
+console.log(ERROR_TYPE_INDEX.FORBIDEN)
+
+const enum ERROR_TYPE {
+  NOT_FOUND = 'notFound',
+  UNAUTHORIZED = 'unauthorized',
+  FORBIDEN = 'forbidenxx'
+}
+console.log(ERROR_TYPE.FORBIDEN)
+
+// use for libraries, to be used
+enum ERROR_TYPE_2 {
+  NOT_FOUND = 'notFound',
+  UNAUTHORIZED = 'unauthorized',
+  FORBIDEN = 'forbidenyy'
+}
+console.log(ERROR_TYPE_2.FORBIDEN)
+
+
+
+// interfaces
+interface OperationsWay1 {
+  add: (product: string) => void,
+  get: (id: number) => string
+}
+
+interface OperationsWay2 {
+  add(product: string) : void,
+  get(id: number) :string
+}
+
+// se puede usar de nuevo el nombre de la interfas pero con otra firma
+interface OperationsWay2 {
+  remove(id: number) :string
+}
+
+// interface HexaInterface = `#${string}` // it does not compile
+
+// narrowing
+
+
+// forma js de hacer narrowing
+function showLen(object: string | number) : number {
+  if ( typeof object === 'string') {
+    return object.length
+  } else if (typeof object === 'number') {
+    return object.toString().length
+  } else {
+    object // es never
+    return 9999
+  }
+}
+
+console.log(showLen(123))
+console.log(showLen("123"))
+
+interface Mario {
+  name: string,
+  jump(): void
+}
+
+interface Sonic {
+  name: string,
+  run(): void
+}
+
+type Character = Mario | Sonic
+
+// type guard
+function checkIsSonic(character: Character): character is Sonic {
+  return (character as Sonic) === undefined
+}
+
+
+function play(character: Character): void {
+  const name = character.name
+  // ahora  si puede inferir
+  if (checkIsSonic(character)) {
+    character.run();
+  } else {
+    character.jump()
+  }
+
+}
