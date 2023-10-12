@@ -14,3 +14,8 @@ npm install --save-dev --save-exact prettier
 npm install --save-dev jest
 npm install --save-dev @types/jest
 npm install --save-dev ts-jest
+
+
+## run
+npm install -g ts-node
+ts-node index.ts 
