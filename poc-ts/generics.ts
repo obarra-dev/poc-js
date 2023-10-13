@@ -99,6 +99,13 @@ const r3: Resource<string[]> = {
 console.log(r3)
 
 
+function getArray<T>(items:T[]): T[] {
+    return new Array<T>().concat(items)
+}
+
+console.log(getArray<number>([1,2,3]))
+console.log(getArray<string>(['one', 'two']))
+
 // esto esta raro
 const addUUID = <T>(obj: T) => {
     const uuid = Math.floor(Math.random() * 100)
