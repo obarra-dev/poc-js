@@ -62,6 +62,20 @@ names.forEach(name =>  showName(name))
 
 
 // objects
+const employee : {
+  readonly id: number,
+  name: string,
+  retire: () => string
+} = {id: 1, name: "omaralberto", retire : () => "retire: now"}
+console.log(employee)
+console.log(employee.retire())
+
+// literal type (exact, specific)
+let quantity: 50 = 50
+
+// nulleable types, if it is just string it cannot be null
+let name: string | null
+
 // type alias
 
 type HeroId = `${string}-${string}-${string}-${string}-${string}`
@@ -176,6 +190,11 @@ console.log(gameBoard)
 
 type RGB = [number, number, number]
 const rgb: RGB = [1,2,3]
+console.log(rgb)
+rgb.push(4) // I think it is a bug
+console.log(rgb) 
+
+
 
 type State = [string, (nameState: string) => void]
 const [message, setMessage] : State = ["hello world", (message: string) => {console.log(`setting: ${message}`)}]
