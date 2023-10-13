@@ -222,21 +222,3 @@ enum ERROR_TYPE_2 {
   FORBIDEN = 'forbidenyy'
 }
 console.log(ERROR_TYPE_2.FORBIDEN)
-
-// narrowing
-
-
-// forma js de hacer narrowing
-function showLen(object: string | number) : number {
-  if ( typeof object === 'string') {
-    return object.length
-  } else if (typeof object === 'number') {
-    return object.toString().length
-  } else {
-    object // es never
-    return 9999
-  }
-}
-
-console.log(showLen(123))
-console.log(showLen("123"))

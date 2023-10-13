@@ -1,3 +1,23 @@
+
+// Narrowing
+
+
+// forma js de hacer narrowing
+function showLen(object: string | number) : number {
+    if ( typeof object === 'string') {
+      return object.length
+    } else if (typeof object === 'number') {
+      return object.toString().length
+    } else {
+      object // es never, xq segun los tipo esto nunca puede ser
+      return 9999
+    }
+  }
+  
+  console.log(showLen(123))
+  console.log(showLen("123"))
+    
+
 interface Bird {
   name: string;
   feathersColor: string;
