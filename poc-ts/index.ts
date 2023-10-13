@@ -223,26 +223,6 @@ enum ERROR_TYPE_2 {
 }
 console.log(ERROR_TYPE_2.FORBIDEN)
 
-
-
-// interfaces
-interface OperationsWay1 {
-  add: (product: string) => void,
-  get: (id: number) => string
-}
-
-interface OperationsWay2 {
-  add(product: string) : void,
-  get(id: number) :string
-}
-
-// se puede usar de nuevo el nombre de la interfas pero con otra firma
-interface OperationsWay2 {
-  remove(id: number) :string
-}
-
-// interface HexaInterface = `#${string}` // it does not compile
-
 // narrowing
 
 
@@ -260,32 +240,3 @@ function showLen(object: string | number) : number {
 
 console.log(showLen(123))
 console.log(showLen("123"))
-
-interface Mario {
-  name: string,
-  jump(): void
-}
-
-interface Sonic {
-  name: string,
-  run(): void
-}
-
-type Character = Mario | Sonic
-
-// type guard
-function checkIsSonic(character: Character): character is Sonic {
-  return (character as Sonic) === undefined
-}
-
-
-function play(character: Character): void {
-  const name = character.name
-  // ahora  si puede inferir
-  if (checkIsSonic(character)) {
-    character.run();
-  } else {
-    character.jump()
-  }
-
-}
