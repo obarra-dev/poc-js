@@ -50,3 +50,4 @@ if (isPersonxx(somePerson)) {
 
 console.log(bobby);
 
+// test asing unk to string, string to unos , in func, with any etc

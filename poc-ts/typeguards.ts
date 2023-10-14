@@ -174,3 +174,5 @@ characterTwo.run();
 
 play(characterTwo);
 play(characterOne);
+
+// que pasa con any, unkown , interfces no union

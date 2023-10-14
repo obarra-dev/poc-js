@@ -199,26 +199,3 @@ console.log(rgb)
 type State = [string, (nameState: string) => void]
 const [message, setMessage] : State = ["hello world", (message: string) => {console.log(`setting: ${message}`)}]
 setMessage(message)
-
-// enums
-const enum ERROR_TYPE_INDEX {
-  NOT_FOUND,
-  UNAUTHORIZED,
-  FORBIDEN
-}
-console.log(ERROR_TYPE_INDEX.FORBIDEN)
-
-const enum ERROR_TYPE {
-  NOT_FOUND = 'notFound',
-  UNAUTHORIZED = 'unauthorized',
-  FORBIDEN = 'forbidenxx'
-}
-console.log(ERROR_TYPE.FORBIDEN)
-
-// use for libraries, to be used
-enum ERROR_TYPE_2 {
-  NOT_FOUND = 'notFound',
-  UNAUTHORIZED = 'unauthorized',
-  FORBIDEN = 'forbidenyy'
-}
-console.log(ERROR_TYPE_2.FORBIDEN)
