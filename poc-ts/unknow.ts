@@ -1,5 +1,6 @@
 // important: The unknown type is the type-safe counterpart of any.
 // When working with the unknown type, we basically tell TypeScript that we're going to get this value, but we don't know its type.
+// Using unknown forces you to perform a type check before using a value, which helps prevent runtime errors 
 
 // important The any type effectively turns off type checking, s
 
@@ -112,7 +113,6 @@ doSomethingWithAny(unknownvar)
 // Type 'unknown' is  assignable to type 'any'
 // Type 'any' is  assignable to type 'unknown'
 
-
 const unknownvar2: unknown = 444
 anyvar = unknownvar2
 const anyvar2: any = "555"
@@ -120,4 +120,27 @@ unknownvar = anyvar2
 doSomethingWithUnknow(anyvar)
 doSomethingWithAny(unknownvar)
 
+// UNKOWN and ANY assignation with null
+anyvar = null
+unknownvar = null
+doSomethingWithUnknow(unknownvar)
+doSomethingWithAny(anyvar)
 
+// UNKOWN and ANY assignation with undefined
+anyvar = undefined
+unknownvar = undefined
+doSomethingWithUnknow(unknownvar)
+doSomethingWithAny(anyvar)
+
+
+// UNKOWN and ANY method execution
+
+
+try {
+  anyvar.method();     // it compile; anything goes with any
+} catch(e) {
+  console.log("TypeError: anyvar.method is not a function")
+}
+
+// Not ok; we don't know anything about this variable
+// unknownvar.method();
