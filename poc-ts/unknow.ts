@@ -50,4 +50,74 @@ if (isPersonxx(somePerson)) {
 
 console.log(bobby);
 
-// test asing unk to string, string to unos , in func, with any etc
+
+// UNKOWN assignation
+function doSomethingWithUnknow(unknownvar: unknown) {
+  console.log(unknownvar)
+}
+
+let unknownvar: unknown = "unknown"
+doSomethingWithUnknow(unknownvar)
+
+let stringvar : string= "string"
+doSomethingWithUnknow(stringvar)
+
+let objectvar : object= { name: 'omar'}
+doSomethingWithUnknow(objectvar)
+
+unknownvar = stringvar
+doSomethingWithUnknow(unknownvar)
+
+unknownvar = objectvar 
+doSomethingWithUnknow(unknownvar)
+
+// Type 'unknown' is not assignable to type 'string' or others
+// stringvar = unknownvar
+// objectvar = unknownvar
+
+
+// ANY assignation
+function doSomethingWithAny(anything: any) {
+  console.log(anything)
+}
+
+let anyvar: any = "unknown"
+doSomethingWithAny(anyvar)
+
+doSomethingWithAny(stringvar)
+
+doSomethingWithAny(objectvar)
+
+anyvar = stringvar
+doSomethingWithAny(anyvar)
+
+anyvar = objectvar 
+doSomethingWithAny(anyvar)
+
+// type any is assingable to other types, but unkown not
+stringvar = anyvar
+objectvar = anyvar
+
+doSomethingWithAny(stringvar)
+doSomethingWithAny(objectvar)
+
+
+// UNKOWN and ANY assignation
+
+anyvar = 123
+unknownvar = "567"
+doSomethingWithUnknow(anyvar)
+doSomethingWithAny(unknownvar)
+
+// Type 'unknown' is  assignable to type 'any'
+// Type 'any' is  assignable to type 'unknown'
+
+
+const unknownvar2: unknown = 444
+anyvar = unknownvar2
+const anyvar2: any = "555"
+unknownvar = anyvar2
+doSomethingWithUnknow(anyvar)
+doSomethingWithAny(unknownvar)
+
+
