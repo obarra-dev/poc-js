@@ -60,6 +60,12 @@ const names = ["omar", "barra"]
 // inferencia funciones anonimas segun el contexto
 names.forEach(name =>  showName(name))
 
+// literal type (exact, specific)
+let quantity: 50 = 50
+
+// nulleable types, if it is just string it cannot be null
+let name: string | null
+
 
 // objects
 const employee : {
@@ -70,91 +76,6 @@ const employee : {
 console.log(employee)
 console.log(employee.retire())
 
-// literal type (exact, specific)
-let quantity: 50 = 50
-
-// nulleable types, if it is just string it cannot be null
-let name: string | null
-
-// type alias
-
-type HeroId = `${string}-${string}-${string}-${string}-${string}`
-type Hero =  {readonly id?: HeroId,
-   name: string, 
-   age: number,
-    active?: boolean}
-
-function createHero(hero: Hero): Hero {
-  const {name, age} = hero
-  return {name, age, active: true, id: "a-b-c-d-e"}
-}
-
-const newHero = createHero({name: "barra", age: 7})
-console.log(newHero)
-
-// optional properties
-// newHero.id = 323 does no compile
-
-
-// template union types
-type Hexa = `#${string}`
-const color: Hexa = '#00333ff'
-// const colorInvalid: Hexa = '00333ff' // it does not compile
-
-
-// union types
-type HeroPowerScale = 'local' | 'multiversal'
-type NumOrString = number | string
-type StringOr3 = string | 3
-const enableAnimationDuration: boolean | number = 200
-
-
-// intersection types para extender
-
-
-type HeroBasicInfo =  {
-  name: string, 
-  age: number,
-   }
-
-type HeroProperties =  {readonly id?: HeroId,
-    active?: boolean}
-
-type HeroComplete = HeroBasicInfo & HeroProperties
-
-function createHeroComplete(hero: HeroBasicInfo): HeroComplete {
-  const {name, age} = hero
-  return {name, age, active: true, id: "a-b-c-d-e"}
-}
-
-const completeHero = createHeroComplete({name: "barra-complete", age: 7})
-console.log(completeHero)
-
-// type indexing para reutilizar tipos
-
-type SomeProps =  {
-  name: string, 
-  address: {
-    planet: string, 
-    city: string,
-     }
-   }
-
-  const address : SomeProps['address'] = {planet: "mars", city: "la paz"}
-  console.log(address)
-
-  // type from value
-  type Address = typeof address
-
-  const newaddress : Address = {planet: "earth", city: "cocha"}
-  console.log(newaddress)
-
-  function createAddress() {
-    return {planet: "pluton", city: "santa cruz"}
-  }
-  type AddresFromRetun = ReturnType<typeof createAddress>
-  const ad : AddresFromRetun = {planet: "earth", city: "otro"}
-  console.log(ad)
 
   // arrays
 

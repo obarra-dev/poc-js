@@ -100,3 +100,23 @@ const clock = new Clock(2);
 clock.showTime();
 clock.setTime(new Date("July 21, 1983 01:15:00"));
 clock.showTime();
+
+
+
+// se puede usar el mismo nombre de interface, ademas se unenen los atributos
+interface TeacherInterface {
+  name: string;
+}
+
+interface TeacherInterface {
+  age: number;
+}
+
+const teacher: TeacherInterface = {
+  name: "teacher",
+  age: 123,
+};
+console.log(teacher);
+
+// no compila, tiene que tener todas las propiedades de las interfaces con el mismo nombre
+// const teacher2: TeacherInterface = {    name: "teacher"};
