@@ -1,3 +1,7 @@
+// nota: types y internfaces se puede usar para definir funciones, definir atributos, ser implementados
+// segun types script es preferible usar interfaces sobre types
+// condletv prefire usar interfaces para definir contratos, y types para el dominio interno
+
 // un type puede tener funciones
 type sayHyToMe = (name: string) => string;
 

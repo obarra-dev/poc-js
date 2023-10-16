@@ -45,7 +45,10 @@ function hasAccess(role: Roles): void {
 
 hasAccess(Roles.Admin);
 
+// esto si compila, puede traer errores
+hasAccess(2);
 // does not compile
+// hasAccess(3);
 // hasAccess(10);
 
 enum RolesString {

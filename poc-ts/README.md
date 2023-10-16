@@ -19,3 +19,6 @@ npm install --save-dev ts-jest
 ## run
 npm install -g ts-node
 ts-node index.ts 
+
+
+tsc

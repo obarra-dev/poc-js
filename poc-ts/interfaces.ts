@@ -103,7 +103,11 @@ clock.showTime();
 
 
 
+// Merging declaration, esto solo se puede hacer con interfaces con los tipos no se puede
 // se puede usar el mismo nombre de interface, ademas se unenen los atributos
+// cumple con SOLID abierto cerrado
+// caso de uso: si se tiene una existente, legacy Ineterface se podria agrgar mas atributos usando esta tecnica
+// ejemplo en la interface Window del navegador podemos agregar mas atributos
 interface TeacherInterface {
   name: string;
 }

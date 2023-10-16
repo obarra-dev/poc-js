@@ -120,3 +120,32 @@ console.log(rgb)
 type State = [string, (nameState: string) => void]
 const [message, setMessage] : State = ["hello world", (message: string) => {console.log(`setting: ${message}`)}]
 setMessage(message)
+
+
+// Satisfies
+
+interface ImageInterface {
+  data: string,
+  width: number,
+  hight: number
+}
+type CustomImageType = string | ImageInterface
+
+interface UserInterface {
+  name: string,
+  image: CustomImageType
+}
+
+const userBadUseage: UserInterface = {
+  name: 'user',
+  image: 'imagedata'
+}
+// no pude inferir que tipo es 
+//userBadUseage.image.
+
+const userGooUseage = {
+  name: 'user',
+  image: 'imagedata'
+} satisfies UserInterface
+
+console.log(userGooUseage.image.concat('-infer'))
