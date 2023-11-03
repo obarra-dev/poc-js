@@ -53,3 +53,45 @@ const handleClick = id => event {
 // within your html
 <button onClick=handleClick('45')>
  */
+
+
+// Closures
+// Closuer is a combination of function and  lexical env
+// lexical env is context when function was defined
+// self - contained
+// heap memory -> clousure
+// call stack  -> no clousure
+function outer() {
+    let state = 'World'
+
+    // inner is not a pure function 
+    function inner() {
+        return `Hello ${state}`
+    }
+
+    return inner
+}
+
+console.log(outer()())
+
+
+// var is hoisted to global scope
+for (var i = 0 ; i < 3; i++) {
+    const log = () => {
+        console.log(i)
+    }
+
+    setTimeout(log, 100)
+}
+// show 3, 3, 3
+
+// let i is local to the for block and it cannot be access out side of it
+// let is block scoped, with late the variable is scopet to the for loop
+for (let i = 0 ; i < 3; i++) {
+    const log = () => {
+        console.log(i)
+    }
+
+    setTimeout(log, 100)
+}
+// show 0, 1, 2
