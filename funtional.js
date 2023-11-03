@@ -124,7 +124,7 @@ const toString = arrayPeople => arrayPeople.join(' and ');
 const resultSimple = toString(toArrayString(namesToUpperCase(people)))
 console.log(resultSimple)
 
-
+// Compose performs a right-to-left 
 const compose = (...funs) => input => funs.reduceRight((acc, fn) => fn(acc), input) 
 
 
@@ -139,6 +139,10 @@ const composedFunctionToGetStrinPeoplePointFree = compose(toString, toArrayStrin
 const resultCompose = composedFunctionToGetStrinPeoplePointFree(people);
 console.log(resultCompose);
 
+// Pipe performs a left-to-right composition
+const pipe = (...funs) => input => funs.reduce((acc, fn) => fn(acc), input);
 
-
+const pipedFunctionToGetStrinPeoplePointFree = pipe(namesToUpperCase, toArrayString, toString);
+const resultPipe = pipedFunctionToGetStrinPeoplePointFree(people);
+console.log(resultPipe);
   
